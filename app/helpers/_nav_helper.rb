@@ -25,7 +25,7 @@ module NavHelper
 
   def my_posts_link
     link_to t('my_posts'),
-            'my_posts_path'
+            user_path(current_user)
   end
 
   def all_users_link
@@ -33,8 +33,8 @@ module NavHelper
             users_path
   end
 
-  def my_subscriptions_link
-    link_to t('all_users'),
-            'my_subscriptions_path'
+  def my_followees_link
+    link_to t('my_followees'),
+            'my_followees_path'
   end
 end

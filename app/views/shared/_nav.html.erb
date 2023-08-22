@@ -2,7 +2,7 @@
     <div style="display: flex; justify-content: <%= current_user.present? ? 'space-between' : 'end' %>;">
         <% if current_user.present? %>
             <div>
-                <%= my_posts_link + ' | ' + my_subscriptions_link + ' | ' + all_users_link %>
+                <%= my_posts_link + ' | ' + my_followees_link + ' | ' + all_users_link %>
             </div>
         <% end %>
         <div>

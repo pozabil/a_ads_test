@@ -1,0 +1,6 @@
+<tr>
+    <td style="border-style: solid; border-radius: 4px; padding: 4px"><%= post.body %></td>
+    <% if post.user == current_user %>
+        <td>EDIT</td>
+    <% end %>
+</tr>
