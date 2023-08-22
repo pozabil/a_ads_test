@@ -1,0 +1,6 @@
+<%= form_with model: Post.new do |form| %>
+    <div style="display: flex; align-items: center;">
+        <span><%= form.text_area :body, placeholder: t('whats_new') %></span>
+        <span><%= form.submit %></span>
+    </div>
+<% end %>

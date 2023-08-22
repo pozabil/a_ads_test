@@ -1,0 +1,16 @@
+<% if current_user.present? %>
+    <h1><%= t('my_feed') %></h1>
+    <div class="main_content">
+        <%= render 'posts/new' %>
+
+        <% if @posts.present? %>
+            <table>
+                <%= render @posts %>
+            </table>
+        <% else %>
+            <%= t('need_to_follow_someone') %>
+        <% end %>
+    </div>
+<% else %>
+    <h1><%= t('need_to_authorize') %></h1>
+<% end %>
