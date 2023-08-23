@@ -3,11 +3,11 @@ class RelationshipsController < ApplicationController
   before_action :set_user, only: %i[followers followees]
 
   def followers
-    @users = @user.followers
+    @users = @user.followers.order(name: :asc)
   end
 
   def followees
-    @users = @user.followees
+    @users = @user.followees.order(name: :asc)
   end
 
   def toggle_follow

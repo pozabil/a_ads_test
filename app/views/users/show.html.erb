@@ -1,5 +1,9 @@
 <h1><%= @user.name %></h1>
 
+<% if @user != current_user %>
+  <h3><%= toogle_follow_link(@user) %></h3>
+<% end %>
+
 <div><%= followers_link(@user) + ' | ' + followees_link(@user) %></div>
 
 <div>

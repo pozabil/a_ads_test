@@ -13,8 +13,8 @@ module NavHelper
     link_to t('sign_out'),
             destroy_user_session_path,
             data: {
-              'turbo-method': :delete,
-              confirm: t('sign_out_confirm')
+              turbo_method: :delete,
+              turbo_confirm: t('confirm_question')
             }
   end
 

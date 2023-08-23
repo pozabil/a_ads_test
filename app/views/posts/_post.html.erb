@@ -1,7 +1,7 @@
 <tr>
   <td style="border-style: solid; border-radius: 4px; padding: 4px"><%= post.body %></td>
+  <td><%= l post.created_at %></td>
   <% if post.user == current_user %>
-    <td><%= edit_post_link(post) %></td>
     <td><%= destroy_post_link(post) %></td>
   <% end %>
 </tr>
