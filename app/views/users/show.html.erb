@@ -11,7 +11,7 @@
   <% if @user == current_user%>
     <%= render 'posts/new' %>
   <% end %>
-  <table>
+  <table id = 'posts_table'>
     <%= render @posts %>
   </table>
 </div>

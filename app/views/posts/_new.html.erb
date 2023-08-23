@@ -1,6 +1,5 @@
-<%= form_with model: Post.new do |form| %>
-  <div style="display: flex; align-items: center;">
-    <span><%= form.text_area :body, placeholder: t('whats_new') %></span>
-    <span><%= form.submit %></span>
-  </div>
+<%= form_with model: Post.new, id: 'post_form' do |form| %>
+  <span><%= form.text_area :body, required: true, placeholder: t('whats_new') %></span>
+  <span><%= form.submit %></span>
+  <span id="success_notice"></span>
 <% end %>

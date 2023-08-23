@@ -1,5 +1,5 @@
-<tr>
-  <td><%= link_to user.name, user_path(user) %></td>
+<tr id="user_<%= user.id %>">
+  <td><%= user_profile_link(user) %></td>
   <% if user != current_user %>
     <td><%= toogle_follow_link(user) %></td>
   <% end %> 

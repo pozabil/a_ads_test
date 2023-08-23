@@ -12,6 +12,7 @@ module RelationshipsHelper
   def toogle_follow_link(user)
     link_to current_user.is_following?(user) ? t('unfollow') : t('follow'),
             toggle_follow_relationship_path(user),
+            id: "toggle_follow_link_#{user.id}",
             data: { 'turbo-method': :post }
   end
 end

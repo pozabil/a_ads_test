@@ -1,14 +1,12 @@
 <nav>
-  <div style="display: flex; justify-content: space-between;">
-    <div>
-      <%= home_link %>
-      <% if current_user.present? %>
-        |
-        <%= my_profile_link + ' | ' + all_users_link %>
-      <% end %>
-    </div>
-    <div>
-      <%= current_user.present? ? (edit_user_link + ' | ' + sign_out_link) : (sign_up_link + ' | ' + sign_in_link) %>
-    </div>
+  <div>
+    <%= home_link %>
+    <% if current_user.present? %>
+      |
+      <%= my_profile_link + ' | ' + all_users_link %>
+    <% end %>
+  </div>
+  <div>
+    <%= current_user.present? ? (edit_user_link + ' | ' + sign_out_link) : (sign_up_link + ' | ' + sign_in_link) %>
   </div>
 </nav>

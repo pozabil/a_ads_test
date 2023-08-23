@@ -1,7 +1,12 @@
-<tr>
-  <td style="border-style: solid; border-radius: 4px; padding: 4px"><%= post.body %></td>
+<tr id="post_<%= post.id %>">
+  <td class="post_body"><%= post.body %></td>
   <td><%= l post.created_at %></td>
   <% if post.user == current_user %>
     <td><%= destroy_post_link(post) %></td>
+  <% end %>
+  <% if controller_name == 'pages' && action_name == 'home' %>
+    <td>
+      <span><i>by</i></span>
+      <span><b><%= user_profile_link(post.user) %></b><span>
   <% end %>
 </tr>
