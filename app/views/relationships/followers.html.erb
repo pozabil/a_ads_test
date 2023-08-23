@@ -1,5 +1,7 @@
 <h1><%= t('followers_list', username: @user.name) %></h1>
 
+<h4><%= back_to_profile_link(@user) %></h4>
+
 <table>
   <%= render @users %>
 </table>

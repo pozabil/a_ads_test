@@ -13,4 +13,8 @@ class User < ApplicationRecord
   def is_following?(user)
     followee_relationships.exists?(followee: user)
   end
+
+  def following_posts
+    Post.where(user_id: followee_ids).order(created_at: :desc)
+  end
 end

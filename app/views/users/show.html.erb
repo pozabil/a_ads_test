@@ -1,6 +1,13 @@
 <h1><%= @user.name %></h1>
+
 <div><%= followers_link(@user) + ' | ' + followees_link(@user) %></div>
-<h3><%= t('posts_list', author: @user.name) %></h1>
-<table>
-  <%= render @posts %>
-</table>
+
+<div>
+  <h3><%= t('posts_list') %></h3>
+  <% if @user == current_user%>
+    <%= render 'posts/new' %>
+  <% end %>
+  <table>
+    <%= render @posts %>
+  </table>
+</div>

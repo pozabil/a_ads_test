@@ -23,6 +23,11 @@ module NavHelper
             edit_user_registration_path
   end
 
+  def home_link
+    link_to t('home'),
+            root_path
+  end
+
   def my_profile_link
     link_to t('my_profile'),
             user_path(current_user)

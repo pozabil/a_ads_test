@@ -1,14 +1,14 @@
 <nav>
-    <div style="display: flex; justify-content: space-between;">
-        <div>
-            <%= link_to t('home'), root_path %>
-            <% if current_user.present? %>
-                |
-                <%= my_profile_link + ' | ' + all_users_link %>
-            <% end %>
-        </div>
-        <div>
-            <%= current_user.present? ? (edit_user_link + ' | ' + sign_out_link) : (sign_up_link + ' | ' + sign_in_link) %>
-        </div>
+  <div style="display: flex; justify-content: space-between;">
+    <div>
+      <%= home_link %>
+      <% if current_user.present? %>
+        |
+        <%= my_profile_link + ' | ' + all_users_link %>
+      <% end %>
     </div>
+    <div>
+      <%= current_user.present? ? (edit_user_link + ' | ' + sign_out_link) : (sign_up_link + ' | ' + sign_in_link) %>
+    </div>
+  </div>
 </nav>

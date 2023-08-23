@@ -1,6 +1,6 @@
 class RelationshipsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user
+  before_action :set_user, only: %i[followers followees]
 
   def followers
     @users = @user.followers
@@ -11,6 +11,7 @@ class RelationshipsController < ApplicationController
   end
 
   def toggle_follow
+    @user = User.find(params[:id])
     if current_user.is_following?(@user)
       @followee_relationship = current_user.followee_relationships.find_by!(followee: @user)
       @followee_relationship.destroy

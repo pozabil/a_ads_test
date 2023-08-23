@@ -3,6 +3,6 @@ en:
     formats:
       default: "%H:%M %d/%m/%Y"
   whats_new: "What's new?"
-  posts_list: "Posts by %{author}"
+  posts_list: "Posts"
   followees_list: "Followees of %{username}"
   followers_list: "Followers of %{username}"
