@@ -1,3 +1,6 @@
 <tr>
     <td><%= user.name %></td>
+    <% if user != current_user %>
+        <td><%= toogle_follow_link(user) %></td>
+    <% end %> 
 </tr>

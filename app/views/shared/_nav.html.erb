@@ -1,12 +1,14 @@
 <nav>
-    <div style="display: flex; justify-content: <%= current_user.present? ? 'space-between' : 'end' %>;">
-        <% if current_user.present? %>
-            <div>
-                <%= my_posts_link + ' | ' + my_followees_link + ' | ' + all_users_link %>
-            </div>
-        <% end %>
+    <div style="display: flex; justify-content: space-between;">
+        <div>
+            <%= link_to t('home'), root_path %>
+            <% if current_user.present? %>
+                |
+                <%= my_profile_link + ' | ' + all_users_link %>
+            <% end %>
+        </div>
         <div>
             <%= current_user.present? ? (edit_user_link + ' | ' + sign_out_link) : (sign_up_link + ' | ' + sign_in_link) %>
-        <div>
+        </div>
     </div>
 </nav>

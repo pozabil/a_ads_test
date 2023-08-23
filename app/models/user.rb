@@ -5,7 +5,12 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
-  has_many :relationships, dependent: :destroy
-  has_many :followers, through: :relationships, dependent: :destroy
-  has_many :followee, through: :relationships, dependent: :destroy
+  has_many :follower_relationships, class_name: 'Relationship', foreign_key: 'followee_id', dependent: :destroy
+  has_many :followee_relationships, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
+  has_many :followers, through: :follower_relationships, dependent: :destroy
+  has_many :followees, through: :followee_relationships, dependent: :destroy
+
+  def is_following?(user)
+    followee_relationships.exists?(followee: user)
+  end
 end

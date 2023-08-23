@@ -23,18 +23,13 @@ module NavHelper
             edit_user_registration_path
   end
 
-  def my_posts_link
-    link_to t('my_posts'),
+  def my_profile_link
+    link_to t('my_profile'),
             user_path(current_user)
   end
 
   def all_users_link
     link_to t('all_users'),
             users_path
-  end
-
-  def my_followees_link
-    link_to t('my_followees'),
-            'my_followees_path'
   end
 end
